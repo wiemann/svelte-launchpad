@@ -43,3 +43,7 @@ You can now open the file `waitinglist.csv`.
 ## Visually 
 Use a db client like pgadmin and use your DATABASE_URL to connect to the server
 
+---
+Created by <a href="https://twitter.com/wiemann">Matthias Wiemann</a> 
+
+Sponsored by <a href="https://www.tinycloud.io">TinyCloud GmbH</a>
