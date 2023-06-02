@@ -11,7 +11,7 @@ It includes the following:
 - SvelteKit
 - Tailwind
 - Svelte Superforms
-- Prisma
+- Prisma ([getting started](https://www.prisma.io/docs/getting-started))
 
 Prisma was chosen to manage access to the database because it can be used with multiple databases like PostgreSQL, MySQL and Microsoft SQL.
 
@@ -26,8 +26,8 @@ Svelte Launchpad uses JSDoc instead of TypeScript for type safety because this e
 - `pnpm prisma db push` to run database migrations
 - `pnpm dev` to run the development server. that's it
 
+- You need a database server (fly.io offers f ree postgres packages)
 # Deployment
-- You need a database server (fly.io offers free postgres packages)
 - set the DATABASE_URL at your hosting providers Enviroment Variable section
 - Deploy your app (e.g. with Vercel)
 
@@ -38,7 +38,7 @@ Svelte Launchpad uses JSDoc instead of TypeScript for type safety because this e
 - Export data `\COPY "Waitinglist" TO 'waitinglist.csv' CSV HEADER`
 - Exit psql with `exit`
 
-You can now open the file `waitinglist.csv`.
+You can now open the file `waitingli    st.csv`.
 
 ## Visually 
 Use a db client like pgadmin and use your DATABASE_URL to connect to the server
