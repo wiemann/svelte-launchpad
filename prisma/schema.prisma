@@ -10,8 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Waitinglist {
-  uid        String  @id @default(cuid())
-  createdAt DateTime @default(now())
-  email       String @unique
+model waitinglist {
+  uid       String    @id @default(cuid())
+  createdAt DateTime? @default(now())
+  email     String    @unique
 }

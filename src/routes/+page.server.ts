@@ -8,6 +8,7 @@ const schema = z.object({
 	email: z.string().email()
 });
 
+	/** @type {import('@sveltejs/kit').Load} */
 export const load = async () => {
 	// Server API:
 	const form = await superValidate(schema);
@@ -17,6 +18,9 @@ export const load = async () => {
 };
 
 export const actions = {
+	/**
+	 * @type {import('@sveltejs/kit').RequestHandler}
+	 */
 	default: async ({ request }) => {
 		const form = await superValidate(request, schema);
 		console.log('POST', form);
@@ -32,14 +36,12 @@ export const actions = {
 					email: form.data.email
 				}
 			});
-      return message(form, 'We will email you soon!');
-
+			return message(form, 'We will email you soon!');
 		} catch (e) {
-      console.log(e);
-      return message(form, 'Could not create waitinglist entry. Email already submitted?', {
-        status: 403
-      });
-
+			console.log(e);
+			return message(form, 'Could not create waitinglist entry. Email already submitted?', {
+				status: 403
+			});
 		}
 		// TODO: Do something with the validated data
 
