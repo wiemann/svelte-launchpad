@@ -35,10 +35,10 @@ Svelte Launchpad uses JSDoc instead of TypeScript for type safety because this e
 
 ## Export to CSV file
 - Connect with postgres client `psql $DATABASE_URL`.
-- Export data `\COPY "Waitinglist" TO 'waitinglist.csv' CSV HEADER`
+- Export data `\COPY "waitinglist" TO 'waitinglist.csv' CSV HEADER`
 - Exit psql with `exit`
 
-You can now open the file `waitingli    st.csv`.
+You can now open the file `waitinglist.csv`.
 
 ## Visually 
 Use a db client like pgadmin and use your DATABASE_URL to connect to the server
