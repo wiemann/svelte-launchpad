@@ -1,38 +1,45 @@
-# create-svelte
+# Svelte Launchpad
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a sveltekit starter template for new projects which need a signup page to store waiting list signups.
 
-## Creating a project
+# Motivation
 
-If you're seeing this, you've probably already done this step. Congrats!
+This template is made to be a good foundation to start a SAAS project by using good defaults for a SvelteKit stack. 
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+It includes the following:
+- SvelteKit
+- Tailwind
+- Svelte Superforms
+- Prisma
 
-## Developing
+Prisma was chosen to manage access to the database because it can be used with multiple databases like PostgreSQL, MySQL and Microsoft SQL.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Svelte Launchpad uses JSDoc instead of TypeScript for type safety because this eliminates a lot of build complexity. It uses the vercel adapter for hosting by default but can easily be modified to use [other hosting adapters](https://kit.svelte.dev/docs/adapter-node).
 
-```bash
-npm run dev
+# Getting Started
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Clone the repo
+- Install pnpm  ([howto](https://pnpm.io/installation))
+- revame `.env.example` to `.env` and add your database url
+- `pnpm install` to install dependencies
+- `pnpm prisma db push` to run database migrations
+- `pnpm dev` to run the development server. that's it
 
-## Building
+# Deployment
+- You need a database server (fly.io offers free postgres packages)
+- set the DATABASE_URL at your hosting providers Enviroment Variable section
+- Deploy your app (e.g. with Vercel)
 
-To create a production version of your app:
+# Export the Waitinglist (Signups)
 
-```bash
-npm run build
-```
+## Export to CSV file
+- Connect with postgres client `psql $DATABASE_URL`.
+- Export data `\COPY "Waitinglist" TO 'waitinglist.csv' CSV HEADER`
+- Exit psql with `exit`
 
-You can preview the production build with `npm run preview`.
+You can now open the file `waitinglist.csv`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Visually 
+Use a db client like pgadmin and use your DATABASE_URL to connect to the server
+
