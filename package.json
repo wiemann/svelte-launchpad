@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --open --port 3000",
-		"build": "vite build",
+		"build": "pnpx prisma db push && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -12,7 +12,7 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"postdeploy": "pnpx prisma db push"
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
