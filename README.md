@@ -21,7 +21,7 @@ Svelte Launchpad uses JSDoc instead of TypeScript for type safety because this e
 
 - Clone the repo
 - Install pnpm  ([howto](https://pnpm.io/installation))
-- revame `.env.example` to `.env` and add your database url
+- rename `.env.example` to `.env` and add your database url
 - `pnpm install` to install dependencies
 - `pnpm prisma db push` to run database migrations
 - `pnpm dev` to run the development server. that's it
