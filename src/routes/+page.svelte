@@ -5,11 +5,17 @@
 	const { form, errors, constraints, message } = superForm(data.form);
 </script>
 
+<svelte:head>
+	<title>SvelteKit Launchpad Template</title>
+	<meta name="description" content="A template for creating landing pages in svelte with prisma database ORM, tailwind and superforms." />
+</svelte:head>
+
 <h1 class="text-2xl">Title Here</h1>
 
 <div class="my-4">
 	<p>This is the signup page to my great new project.</p>
 </div>
+
 
 <div class="my-4 bg-green-200 p-2 rounded-lg">
 	<h2 class="text-xl mb-1">Receive an Invite when we launch</h2>
